@@ -2,6 +2,7 @@ package com.cjaqo.batchmenuapp.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,10 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@Table(name="product")
 public class Product {
 	
 	// Product Data
@@ -21,6 +24,7 @@ public class Product {
 	private Long id;
 	
 	@NotBlank(message = "Batch number is required")
+	@Column(updatable = false, unique = true)
 	private String productBatchNumber;
 	
 	@NotBlank(message = "Product name is required")

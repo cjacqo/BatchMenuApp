@@ -8,12 +8,14 @@
 		<version>2.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.cjaqo</groupId>
+	<groupId>com.cjaqo.batchmenuapp</groupId>
 	<artifactId>batchmenuapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>batchmenuapp</name>
 	<description>Menu app that looks up products with batch number</description>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>

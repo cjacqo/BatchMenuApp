@@ -7,11 +7,8 @@ import com.cjaqo.batchmenuapp.domain.Product;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
-
-	@Override
-	Iterable<Product> findAllById(Iterable<Long> iterable);
 	
-	Product findByProductBatchNumber(String product);
+	Product findByProductBatchNumber(String productBatchNumber);
 	
 	@Override
 	Iterable<Product> findAll();
