@@ -13,6 +13,7 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@Table(name="product")
 public class Product {
 	
 	// Product Data
