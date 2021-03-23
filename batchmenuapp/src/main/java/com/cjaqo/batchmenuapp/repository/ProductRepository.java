@@ -11,9 +11,9 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 	@Override
 	Iterable<Product> findAllById(Iterable<Long> iterable);
 	
-	Product findByProductBatchNumber(String product);
+// 	Product findByProductBatchNumber(String product);
 	
-	@Override
-	Iterable<Product> findAll();
+// 	@Override
+// 	Iterable<Product> findAll();
 	
 }
