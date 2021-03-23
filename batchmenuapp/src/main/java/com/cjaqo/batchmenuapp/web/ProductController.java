@@ -18,8 +18,23 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
+// 	@PostMapping("")
+// 	public ResponseEntity<Product> createNewProduct(@RequestBody Product product) {
+// 		return new ResponseEntity<Product>(product, HttpStatus.CREATED);
+// 	}
+	
 	@PostMapping("")
-	public ResponseEntity<Product> createNewProduct(@RequestBody Product product) {
-		return new ResponseEntity<Product>(product, HttpStatus.CREATED);
+	public ResponseEntity<?> createNewProduct(@Valid @RequestBody Product product, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			Map<String, String> errMap = new HashMap<>();
+			
+			for (FieldError err: result.getFieldErrors() ) {
+				errMap.put(err.getField(), err.getDefaultMessage());
+			}
+			return new ResponseEntity<Map<String, String>>(errMap, HttpStatus.BAD_REQUEST);
+		}
+		Product product1 = productService.saveOrUpdateProduct(product);
+		return new ResponseEntity<Product>(product1, HttpStatus.CREATED);
 	}
 }
