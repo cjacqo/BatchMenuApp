@@ -7,9 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"com.cjaqo.batchmenuapp.components"})
-@EntityScan("com.cjaqo.batchmenuapp.domain")
-@EnableJpaRepositories("com.cjaqo.batchmenuapp.repository")
 public class BatchmenuappApplication {
 
 	public static void main(String[] args) {
